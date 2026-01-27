@@ -6,8 +6,12 @@ import {
 	createBrowserRouter, createHashRouter, createStaticRouter,
 	RouterProvider,
 } from 'react-router-dom';
-import './index.css'
-import App from './App.jsx'
+
+import './index.css';
+//import App from './App.jsx'
+import Root from './Root.jsx';
+import Product from './routes/product.jsx';
+import ErrorPage404 from './error-page-404.jsx';
 
 // createRoot(document.getElementById('root')).render(
 //   <StrictMode>
@@ -16,9 +20,14 @@ import App from './App.jsx'
 // )
 const router = createHashRouter([
 	{
-		path: '/router/',
-		element: <div>Hello Router!</div>,
+		path: '/',
+		element: <Root />,
+    	errorElement: <ErrorPage404 />,
 	},
+	{
+	path: '/products/:productId',
+	element: <Product />,
+},
 ]);
 
 
