@@ -1,3 +1,3 @@
 # React + Vite
 
-- [Link](https://alesyamaltseva.io/router/)
+- [Link](https://alesyamaltseva.github.io/router/)
