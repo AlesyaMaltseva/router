@@ -25,7 +25,7 @@ const router = createHashRouter([
     	errorElement: <ErrorPage404 />,
 	},
 	{
-	path: '/products/:productId',
+	path: '/product1/',
 	element: <Product />,
 },
 ]);
