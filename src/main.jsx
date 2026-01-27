@@ -10,7 +10,10 @@ import {
 import './index.css';
 //import App from './App.jsx'
 import Root from './Root.jsx';
-import Product from './routes/product.jsx';
+// import Product1 from './routes/product1.jsx';
+// import Product2 from './routes/product2.jsx';
+import Product1 from './router/product1.jsx';
+import Product2 from './router/product2.jsx';
 import ErrorPage404 from './error-page-404.jsx';
 
 // createRoot(document.getElementById('root')).render(
@@ -26,7 +29,11 @@ const router = createHashRouter([
 	},
 	{
 	path: '/product1/',
-	element: <Product />,
+	element: <Product1 />,
+},
+{
+	path: '/product2/',
+	element: <Product2 />,
 },
 ]);
 

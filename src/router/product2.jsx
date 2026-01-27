@@ -1,8 +1,8 @@
-function Product() {
+function Product2() {
 	const product = {
-		name: 'Product',
-		cost: 400,
-		amount: 5,
+		name: 'Второй продукт',
+		cost: 800,
+		amount: 23456,
 	};
     return (
 	<div>
@@ -14,4 +14,4 @@ function Product() {
 );
 }
 
-export default Product;
+export default Product2;
