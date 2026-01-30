@@ -1,0 +1,17 @@
+.app {
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+	border: 1px solid brown;
+	padding: 10px;
+}
+
+.wrapper {
+	display: flex;
+	justify-content: space-around;
+}
+
+.title {
+	text-align: center;
+	margin-top: 10px;
+}

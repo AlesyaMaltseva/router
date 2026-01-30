@@ -7,7 +7,7 @@ import {
 	RouterProvider,
 } from 'react-router-dom';
 
-import './index.css';
+import './index.module.css';
 //import App from './App.jsx'
 import Root from './Root.jsx';
 // import Product1 from './routes/product1.jsx';
@@ -24,7 +24,7 @@ import ErrorPage404 from './error-page-404.jsx';
 const router = createHashRouter([
 	{
 		path: '/',
-		element: <Root />,
+		element: <Root />, 
     	errorElement: <ErrorPage404 />,
 	},
 	{
