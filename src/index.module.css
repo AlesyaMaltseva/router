@@ -83,3 +83,24 @@ display: block;
 padding: 8px;
 background-color: #dddddd;
 }
+
+.app {   
+
+h2.title {
+  font-size: 25px;
+  color:red;
+  font-family: Arial, Helvetica, sans-serif;
+}
+  }
+
+#wrapper {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 22px;
+}
+
+  .pink {
+    color:rgb(184, 51, 173);
+  }
+
+
+
