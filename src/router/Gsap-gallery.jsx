@@ -11,22 +11,21 @@ function Gsap() {
 
 useGSAP(() => {
 
-let slideDelay = 2;
+let slideDelay = 1.5;
 let slideDuration = 1.3;
 let snapX;
 
 let slides = document.querySelectorAll(".slide");
-let autoPlayLimit = slides.length * 10;
+let autoPlayLimit = slides.length * 2;
 let autoPlayCount = 1;
 let prevButton = document.querySelector("#prevButton");
 let nextButton = document.querySelector("#nextButton");
-let progressWrap = gsap.utils.wrap(0,1);
+let progressWrap = gsap.utils.wrap(0, 1);
 
 let numSlides = slides.length;
 
 gsap.set(slides, {
-//   backgroundColor: "random([red, blue, green, purple, orange, yellow, lime, pink])",
-//   backgroundImage: "random(['url('./img/Allround.png')', 'url('./img/Economy.png')'])",
+  backgroundColor: "random([red, blue, green, purple, orange, yellow, lime, pink])",
   xPercent: i => i * 100
 });
 
@@ -128,11 +127,16 @@ function resize() {
 	<main>   
   <div className="slides-container">
     <div className="slides-inner">
-      <div style={{backgroundImage:"url('src/router/img/Allround.png')"}} className="slide">1</div>
-      <div style={{backgroundImage:"url('src/router/img/Economy.png')"}} className="slide">2</div>
-      <div style={{backgroundImage:"url('src/router/img/Premium.png')"}} className="slide">3</div>
-      <div style={{backgroundImage:"url('src/router/img/Smooth.png')"}} className="slide">4</div>
-      <div style={{backgroundImage:"url('src/router/img/Ultra.png')"}} className="slide">5</div>    
+      <div style={{backgroundImage:"url('.img/IQ-Allround-standing-A4-1.png')"}} className="slide">1</div>
+      <div className="slide">2</div>
+      <div className="slide">3</div>
+      <div className="slide">4</div>
+      <div className="slide">5</div>
+      <div className="slide">6</div>
+      <div className="slide">7</div>
+      <div className="slide">8</div>
+      <div className="slide">9</div>
+      <div className="slide">10</div>
     </div>
   </div>
   

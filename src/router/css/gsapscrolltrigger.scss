@@ -1,0 +1,42 @@
+
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color:black;
+  
+}
+
+html, body { overflow: auto};
+
+::-webkit-scrollbar {
+  width:0;
+}
+
+$size:80px;
+
+@mixin size {
+    width:$size;
+    height:$size;    
+}
+
+.container {
+  padding:20px;
+  border-bottom: 1px solid #a2a2a2;
+  position: fixed;
+  width:100%;
+  background-color: burlywood;
+}
+
+.box {
+  @include size();
+  background-color: rgb(185, 0, 151);
+}
+
+.buttons {
+  margin-top:170px;
+}
+
+.texts p {
+  max-width:100%;
+  text-align: left;
+  padding:20px;
+}

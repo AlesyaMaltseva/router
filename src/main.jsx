@@ -7,7 +7,8 @@ import {
 	RouterProvider,
 } from 'react-router-dom';
 
-//import './index.module.css';
+import './index.module.css';
+import './App.module.css';
 //import App from './App.jsx'
 import Root from './Root.jsx';
 // import Product1 from './routes/product1.jsx';
@@ -16,6 +17,10 @@ import Product1 from './router/product1.jsx';
 import Product2 from './router/product2.jsx';
 import Product3 from './router/product3.jsx';
 import Gsap from './router/Gsap.jsx';
+import GsapVertical from './router/GsapVertical.jsx';
+import GsapCarousel from './router/GsapCarousel.jsx';
+import GsapScrollTrigger from './router/GsapScrollTrigger.jsx';
+
 import ErrorPage404 from './error-page-404.jsx';
 
 // createRoot(document.getElementById('root')).render(
@@ -44,6 +49,18 @@ const router = createHashRouter([
 {
 	path: '/gsap/',
 	element: <Gsap />,
+},
+{
+	path: '/gsap-vertical/',
+	element: <GsapVertical />,
+},
+{
+	path: '/gsap-carousel/',
+	element: <GsapCarousel />,
+},
+{
+	path: '/gsap-scroll-trigger/',
+	element: <GsapScrollTrigger />,
 },
 ]);
 

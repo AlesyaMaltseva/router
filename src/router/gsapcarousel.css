@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  /* background: #111; */
+  /* min-height: 100vh; */
+  padding: 0;
+  margin: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.gallery {
+  position: absolute;
+  width: 200px; 
+  height: 500px;
+  top:0;
+  overflow: hidden;
+}
+
+.cards {
+  position: absolute;
+  width: 14rem;
+  height: 10rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cards li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 11rem;
+  aspect-ratio: 9/12;
+  text-align: center;
+  /* line-height: 18rem;
+  font-size: 2rem; */
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
+  /* border-radius: 0.8rem; */
+}
+
+.actions {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+a {
+  color: #88ce02;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.drag-proxy {
+  visibility: hidden;
+  position: absolute;
+}
