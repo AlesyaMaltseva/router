@@ -16,10 +16,11 @@ import Ultra from './img/Ultra.png';
 
 function Gsap() {
 
-const slidesContainer = useRef();
-const {contextSafe} = useGSAP({scope:slidesContainer});
+const slidesCarousel = useRef();
+const {contextSafe} = useGSAP({scope:slidesCarousel})
 
 const carousel = contextSafe(() => {
+
 let slideDelay = 2;
 let slideDuration = 1.3;
 let snapX;
@@ -140,19 +141,21 @@ useLayoutEffect(() => {
 
     return <>
 	<main>   
-  <div className="slides-container" ref={slidesContainer}>
-    <div className="slides-inner">
-      <div className="slide"><img src={Allround} /></div>
-      <div className="slide"><img src={Economy} /></div>
-      <div className="slide"><img src={Premium} /></div>
-      <div className="slide"><img src={Smooth} /></div>
-      <div className="slide"><img src={Ultra} /></div>    
-    </div>    
-  </div>
-
-  <div className="controls">
-    <button id="prevButton">Prev</button>
-    <button id="nextButton">Next</button>
+  <div className="slides-carousel" ref={slidesCarousel}>
+    <div className="slides-container">
+      <div className="slides-inner">
+        <div className="slide"><img src={Allround} /></div>
+        <div className="slide"><img src={Economy} /></div>
+        <div className="slide"><img src={Premium} /></div>
+        <div className="slide"><img src={Smooth} /></div>
+        <div className="slide"><img src={Ultra} /></div>    
+      </div>    
+    </div>
+  
+    <div className="controls">
+      <button id="prevButton">Prev</button>
+      <button id="nextButton">Next</button>
+    </div>
   </div>
   
 </main>
