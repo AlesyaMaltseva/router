@@ -19,11 +19,13 @@ $size:80px;
 }
 
 .container {
+  top:0;
   padding:20px;
   border-bottom: 1px solid #a2a2a2;
   position: fixed;
   width:100%;
   background-color: burlywood;
+  height:120px;
 }
 
 .box {

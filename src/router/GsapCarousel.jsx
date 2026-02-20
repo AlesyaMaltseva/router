@@ -7,10 +7,16 @@ import { SplitText } from "gsap/dist/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(useGSAP,Draggable,ScrollTrigger,GSDevTools,InertiaPlugin,SplitText);
 import './gsapcarousel.css'
+import { useEffect } from "react";
 
 function GsapCarousel() {
 
-useGSAP(() => {
+const gallery = useRef();
+const { contextSafe } = useGSAP({scope: gallery});
+
+
+contextSafe(() => {
+useEffect(() => {
 
 let iteration = 1; // gets iterated when we scroll all the way to the end or start and wraps around - allows us to smoothly continue the playhead scrubbing in the correct direction.
 //повторяется, когда мы прокручиваем до конца или до начала и оборачиваем - позволяет нам плавно продолжить очистку головки воспроизведения в правильном направлении.
@@ -144,10 +150,11 @@ function buildSeamlessLoop(items, spacing, animateFunc) {
   return seamlessLoop;
 }
 } 
-) 
+)
+}) 
 
 return <>
-    <div className="gallery">
+    <div className="gallery" ref={gallery}>
     
   <ul className="cards">
   

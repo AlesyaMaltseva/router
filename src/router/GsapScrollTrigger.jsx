@@ -14,23 +14,48 @@ useGSAP(() => {
 
 gsap.to(".box", {
   scale: 0.5,
-  duration: 0.3,
-  ease: "power1.out",
+  duration: 5,
+  ease: "elastic",
   scrollTrigger: {
     trigger: ".box",
-    start: "50px",
-    toggleActions: "play none reverse",     
-  }
+    start: 50,    
+    isTouch: 2,
+    toggleActions: "play none none reset",  //"play none reverse"
+    //onEnterBack: ({progress, direction, isActive}) => console.log(progress, direction, isActive)  
+    onEnterBack: () => {
+      gsap.to(".box", {
+      scale: 1,
+      duration: 0.25,
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: ".box",
+        isTouch: 2,
+        toggleActions: "play none none reset"
+      }
+    })  
+  }}
 });
+
 gsap.to(".container", {
-  height: '50px',
-  duration: 0.3,
+  height: 50,
+  duration: 0.4,
   ease: "power1.out",
   scrollTrigger: {
     trigger: ".container",
     start: "50px",
-    toggleActions: "play none reverse",     
-  }
+    toggleActions: "play none none reset",
+    onEnterBack: () => {
+      gsap.to(".container", {
+      height: 120,
+      duration: 0.15,
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: ".container",
+        isTouch: 2,
+        toggleActions: "play none none reset"
+      }
+    })  
+  }}
 });
 
 });
