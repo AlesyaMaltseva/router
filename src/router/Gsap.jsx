@@ -1,3 +1,4 @@
+import {useEffect, useLayoutEffect, useRef, useState} from 'react';
 import { gsap } from "gsap/dist/gsap";
 import { useGSAP } from "@gsap/react/dist";    
 import { Draggable } from "gsap/dist/Draggable";
@@ -5,12 +6,20 @@ import { InertiaPlugin } from "gsap/dist/InertiaPlugin";
 import { GSDevTools } from "gsap/dist/GSDevTools";
 import { SplitText } from "gsap/dist/SplitText";
 gsap.registerPlugin(useGSAP,Draggable,GSDevTools,InertiaPlugin,SplitText);
-import './gsapstyles.css'
+import './gsapstyles.css';
+import Allround from './img/Allround.png';
+import Economy from './img/Economy.png';
+import Premium from './img/Premium.png';
+import Smooth from './img/Smooth.png';
+import Ultra from './img/Ultra.png';
+
 
 function Gsap() {
 
-useGSAP(() => {
+const slidesContainer = useRef();
+const {contextSafe} = useGSAP({scope:slidesContainer});
 
+const carousel = contextSafe(() => {
 let slideDelay = 2;
 let slideDuration = 1.3;
 let snapX;
@@ -124,18 +133,23 @@ function resize() {
 
 });
 
+
+useLayoutEffect(() => {
+  carousel();
+})
+
     return <>
 	<main>   
-  <div className="slides-container">
+  <div className="slides-container" ref={slidesContainer}>
     <div className="slides-inner">
-      <div style={{backgroundImage:"url('src/router/img/Allround.png')"}} className="slide">1</div>
-      <div style={{backgroundImage:"url('src/router/img/Economy.png')"}} className="slide">2</div>
-      <div style={{backgroundImage:"url('src/router/img/Premium.png')"}} className="slide">3</div>
-      <div style={{backgroundImage:"url('src/router/img/Smooth.png')"}} className="slide">4</div>
-      <div style={{backgroundImage:"url('src/router/img/Ultra.png')"}} className="slide">5</div>    
-    </div>
+      <div className="slide"><img src={Allround} /></div>
+      <div className="slide"><img src={Economy} /></div>
+      <div className="slide"><img src={Premium} /></div>
+      <div className="slide"><img src={Smooth} /></div>
+      <div className="slide"><img src={Ultra} /></div>    
+    </div>    
   </div>
-  
+
   <div className="controls">
     <button id="prevButton">Prev</button>
     <button id="nextButton">Next</button>
